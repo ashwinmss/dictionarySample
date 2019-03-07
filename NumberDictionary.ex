@@ -13,6 +13,8 @@ defmodule NumberDictionary do
 	#	 "VAVASOURS", "VAVASOUR", "VAVASORS", "VAVASOR", "VAV", "VAUS", "VAUNTS",
 	#	 "VAUNT", "VAULTS", "VAULT", "VAU", "VATUS", "VATU", "VATS", "VAT", "VASTS",
 	#	 "VAST", "VASSALS", "VASSAL", "VASOSPASMS", "VASOSPASM", ...]
+	
+	#input - 10 digit Number and path of the dictionary
 	def get_key_words(number, path) do
 		list = String.codepoints(to_string(number))
 		list2 = getMappedChars(list)
@@ -31,7 +33,7 @@ defmodule NumberDictionary do
 	end
 
 	def getMappedChars([h | r], acc) do
-		map = %{2 => ["a", "b", "c"], 3 => ["d", "e", "f"], 4 => ["g", "h", "i"], 5 => ["j", "k", "l"], 6 => ["m", "n", "o"], 7 => ["p", "q", "r", "s"], 8 => ["t", "u", "v"], 9 => ["w", "x", "y", "z"]}
+		map = %{0 => [], 1 => [], 2 => ["a", "b", "c"], 3 => ["d", "e", "f"], 4 => ["g", "h", "i"], 5 => ["j", "k", "l"], 6 => ["m", "n", "o"], 7 => ["p", "q", "r", "s"], 8 => ["t", "u", "v"], 9 => ["w", "x", "y", "z"]}
 		{num,_} = Integer.parse(h)
 		char = map[num]
 		#IO.puts acc
