@@ -27,3 +27,7 @@ Assumptions :
     For the numbers 0 and 1, it is considered as empty
     
     
+Timing & benchmarks : 
+===================
+
+  A function has been exported ('measure') to record the timings of the an input function in seconds.
