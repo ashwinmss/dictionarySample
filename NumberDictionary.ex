@@ -95,4 +95,12 @@ defmodule NumberDictionary do
 		true
 	end
 	######################################
+	
+	#The following function returns the runtime of a given function in seconds
+	def measure(function) do
+		function
+		|> :timer.tc
+		|> elem(0)
+		|> Kernel./(1_000_000)
+	end
 end
